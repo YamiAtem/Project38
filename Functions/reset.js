@@ -12,6 +12,8 @@ function reset(){
         localStorage["HighestScore"] = score;
     }
     console.log(localStorage["HighestScore"]);
+
+    frameCount = 0;
     
     score = 0;
     
