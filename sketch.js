@@ -18,7 +18,7 @@ localStorage["HighestScore"] = 0;
 
 function preload() {
   trex_running =   loadAnimation("Images/trex1.png", "Images/trex3.png", "Images/trex4.png");
-  trex_collided = loadAnimation("trex_collided.png");
+  trex_collided = loadAnimation("Images/trex_collided.png");
   
   groundImage = loadImage("Images/ground2.png");
   
@@ -40,7 +40,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(600, 200);
   
   trex = createSprite(50,180,20,50);
   
