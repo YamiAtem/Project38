@@ -53,10 +53,10 @@ function setup() {
   ground.x = ground.width /2;
   ground.velocityX = -(6 + 3*score/100);
   
-  gameOver = createSprite(300,100);
+  gameOver = createSprite(camera.x, 100);
   gameOver.addImage(gameOverImg);
   
-  restart = createSprite(300,140);
+  restart = createSprite(camera.x, 140);
   restart.addImage(restartImg);
   
   gameOver.scale = 0.5;
@@ -78,10 +78,10 @@ function draw() {
   //trex.debug = true;
   background(255);
   textSize(20);
-  text("Score: "+ score, 500,50);
+  text("Score: "+ score, camera.x + 100,50);
   
   // display highscore
-  text("Highscore: " + localStorage["HighestScore"], 100, 50);
+  text("Highscore: " + localStorage["HighestScore"], camera.x - 50, 50);
   
   if (gameState === PLAY){
     score = score + Math.round(getFrameRate()/60);
@@ -132,6 +132,8 @@ function draw() {
       reset();
     }
   }
+
+  camera.x = trex.x;
   
   drawSprites();
 }
